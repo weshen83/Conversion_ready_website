@@ -84,7 +84,7 @@ export const GrowthVisual = ({ data }: { data: Extract<SignalPayload, { type: 'G
     </div>
     {data.hiring_velocity && (
       <div className="mt-2 text-[10px] font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded inline-block">
-        > {data.hiring_velocity}
+        &gt; {data.hiring_velocity}
       </div>
     )}
   </div>
