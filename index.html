@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversion-Ready System | GTM Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["'Playfair Display'", "Georgia", "serif"],
+              sans: ["'Inter'", "system-ui", "sans-serif"],
+              mono: ["'JetBrains Mono'", "Menlo", "monospace"]
+            },
+            colors: {
+              paper: "#F8F9FA",
+              surface: "#FFFFFF",
+              subtle: "#F1F5F9",
+              primary: {
+                DEFAULT: "#059669",
+                hover: "#10B981",
+                active: "#047857",
+                glow: "rgba(16, 185, 129, 0.5)"
+              },
+              dark: {
+                DEFAULT: "#0F172A",
+                surface: "#1E293B"
+              },
+              verified: { bg: "#ECFDF5", text: "#047857" },
+              risk: { bg: "#FEF2F2", text: "#B91C1C" }
+            },
+            boxShadow: {
+              'glow': '0 0 20px -5px rgba(16, 185, 129, 0.3)', 
+              'glow-lg': '0 0 30px -5px rgba(16, 185, 129, 0.4)',
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+              'hard': '4px 4px 0px 0px rgba(15, 23, 42, 1)'
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)"
+            },
+            animation: {
+              'scanline': 'scanline 8s linear infinite',
+              'marquee': 'marquee 60s linear infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+            },
+            keyframes: {
+              scanline: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F8F9FA;
+        color: #0F172A;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .crt-overlay {
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.03) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F1F5F9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #CBD5E1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94A3B8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-paper text-slate-900 relative selection:bg-emerald-100 selection:text-emerald-900">
+    <div class="fixed inset-0 pointer-events-none z-[9999] crt-overlay"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
